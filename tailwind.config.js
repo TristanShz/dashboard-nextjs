@@ -7,15 +7,15 @@ module.exports = {
     ],
     theme: {
         extend: {
-            neutral: {
-                DEFAULT: "#0D0606",
-                75: "#494444",
-                50: "#868282",
-                25: "#C2C1C1",
-                10: "#E7E6E6",
-                5: "#F3F3F3",
-            },
             colors: {
+                neutral: {
+                    DEFAULT: "#0D0606",
+                    75: "#494444",
+                    50: "#868282",
+                    25: "#C2C1C1",
+                    10: "#E7E6E6",
+                    5: "#F3F3F3",
+                },
                 lightMode: {
                     primary: {
                         DEFAULT: "#FF7079",

@@ -3,18 +3,28 @@ import clsx from "clsx"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
-type Props = {}
-
-const ThemeSwitcher = (props: Props) => {
+const ThemeSwitcher = () => {
     const { theme, setTheme } = useTheme()
     const [translateBg, setTranslateBg] = useState(
         theme === "light" ? "0%" : "100%"
     )
+    console.log("Current theme : ", theme)
+    const switchTheme = () => () => {
+        if (theme === "light") {
+            setTranslateBg("100%")
+            setTheme("dark")
+        }
+        if (theme === "dark") {
+            setTranslateBg("0%")
+            setTheme("light")
+        }
+    }
     return (
         <div
             className={
                 "bg-gray-100 dark:bg-darkMode-layer-1 rounded-full flex gap-2 p-1 relative h-12"
             }
+            onClick={switchTheme()}
         >
             <motion.div
                 className={clsx(
@@ -39,10 +49,6 @@ const ThemeSwitcher = (props: Props) => {
                         "text-neutral-25": theme === "dark",
                     }
                 )}
-                onClick={() => {
-                    setTranslateBg("0%")
-                    setTheme("light")
-                }}
             >
                 {theme === "light" ? (
                     <svg
@@ -80,10 +86,6 @@ const ThemeSwitcher = (props: Props) => {
                         "text-neutral-50": theme === "light",
                     }
                 )}
-                onClick={() => {
-                    setTranslateBg("100%")
-                    setTheme("dark")
-                }}
             >
                 {theme === "dark" ? (
                     <svg
