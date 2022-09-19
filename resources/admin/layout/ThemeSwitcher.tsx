@@ -19,6 +19,7 @@ const ThemeSwitcher = () => {
             setTheme("light")
         }
     }
+
     return (
         <div
             className={
